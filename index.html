@@ -36,36 +36,81 @@
     <link rel="dns-prefetch" href="//id.linkedin.com">
 
     <title>Sigmath Links - Bimbel Matematika Purwokerto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        lexend: ['Lexend', 'sans-serif'],
+                    },
+                    colors: {
+                        'neo-bg': '#FFFBF5',
+                        'neo-primary': '#B4D4FF',
+                        'neo-secondary': '#FFD0D0',
+                        'neo-accent': '#E5CFF7',
+                        'neo-success': '#C1E1C1',
+                        'neo-warning': '#FFE4CF',
+                    },
+                    boxShadow: {
+                        'neo': '4px 4px 0px 0px #000000',
+                        'neo-lg': '8px 8px 0px 0px #000000',
+                        'neo-active': '2px 2px 0px 0px #000000',
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        /* Custom optimizations */
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .neo-card {
+            border: 3px solid #000000;
+            box-shadow: 8px 8px 0px 0px #000000;
+            background-color: white;
+            transition: all 0.2s;
+        }
+
         .link-button {
             display: block;
-            padding: 0.75rem 1rem;
-            color: white;
-            border-radius: 0.5rem;
-            transition: all 0.2s;
+            padding: 0.85rem 1rem;
+            color: black;
+            border: 2px solid #000000;
+            border-radius: 0;
+            box-shadow: 4px 4px 0px 0px #000000;
+            transition: all 0.1s;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
             text-decoration: none;
+            position: relative;
         }
 
         .link-button:hover {
-            background-color: #fef08a;
-            color: black;
-            transform: scale(1.05);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+
+        .link-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000000;
         }
 
         .section-title {
-            color: white;
-            border-bottom: 1px solid #374151;
-            padding-bottom: 0.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            color: #000000;
+            border-bottom: 3px solid #000000;
+            padding-bottom: 0.25rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
         }
 
-        /* Improved loading */
         img {
             image-rendering: auto;
             image-rendering: crisp-edges;
@@ -74,106 +119,137 @@
     </style>
 </head>
 
-<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
-    <main class="w-full max-w-sm bg-slate-800 shadow-2xl rounded-lg overflow-hidden">
+<body class="bg-neo-bg flex items-center justify-center min-h-screen p-4 font-lexend">
+    <main class="w-full max-w-sm neo-card p-2">
         <!-- Profile Header -->
-        <header class="flex justify-start px-6 items-center space-x-4 my-8" role="banner">
-            <img src="https://sigmath.net/wp-content/uploads/2022/11/sigmath-favicon.png" alt="Logo Bimbel Sigmath"
-                class="w-16 h-16 rounded-full border-4 border-white shadow-lg" loading="eager" width="64" height="64">
-            <div class="flex flex-col justify-start">
-                <h1 class="text-xl font-bold text-gray-200">Bimbel Sigmath</h1>
-                <p class="text-sm text-gray-400">@bimbel.sigmath</p>
+        <header class="flex flex-col items-center text-center space-y-4 my-10" role="banner">
+            <div class="relative">
+                <img src="https://sigmath.net/wp-content/uploads/2022/11/sigmath-favicon.png" alt="Logo Bimbel Sigmath"
+                    class="w-24 h-24 border-4 border-black" loading="eager" width="96" height="96">
+            </div>
+            <div class="flex flex-col items-center">
+                <h1 class="text-2xl font-extrabold text-black">Bimbel Sigmath</h1>
+                <p class="text-sm font-medium text-gray-700 bg-neo-warning px-3 py-1 border-2 border-black mt-2">
+                    @bimbel.sigmath</p>
             </div>
         </header>
 
         <!-- Navigation Links -->
-        <nav class="flex flex-col space-y-6 px-6 mb-6" role="navigation" aria-label="Menu utama">
+        <nav class="flex flex-col space-y-8 px-4 mb-10" role="navigation" aria-label="Menu utama">
             <!-- Presensi Section -->
             <section>
-                <h2 class="section-title">📋 Presensi</h2>
-                <div class="space-y-3">
+                <div class="flex items-center space-x-2 section-title">
+                    <i data-lucide="clipboard-check" class="w-5 h-5" stroke-width="3"></i>
+                    <h2 class="text-lg">Presensi</h2>
+                </div>
+                <div class="space-y-4">
                     <a href="https://forms.gle/5gDYnEaES4Ytr6J46" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-indigo-600 hover:bg-indigo-700" aria-label="Submit presensi kehadiran">
-                        📥 Submit Presensi
+                        class="link-button bg-neo-primary flex items-center justify-center space-x-2"
+                        aria-label="Submit presensi kehadiran">
+                        <i data-lucide="log-in" class="w-5 h-5" stroke-width="3"></i>
+                        <span>Submit Presensi</span>
                     </a>
                     <a href="https://all-time.sigmath.net" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-indigo-600 hover:bg-indigo-700"
+                        class="link-button bg-neo-primary flex items-center justify-center space-x-2"
                         aria-label="Lihat rekap presensi semua waktu">
-                        📈 Rekap Presensi All Time
+                        <i data-lucide="bar-chart-3" class="w-5 h-5" stroke-width="3"></i>
+                        <span>Rekap Presensi All Time</span>
                     </a>
                 </div>
             </section>
 
             <!-- Fee Section -->
             <section>
-                <h2 class="section-title">💰 Fee</h2>
-                <div class="space-y-3">
+                <div class="flex items-center space-x-2 section-title">
+                    <i data-lucide="banknote" class="w-5 h-5" stroke-width="3"></i>
+                    <h2 class="text-lg">Fee</h2>
+                </div>
+                <div class="space-y-4">
                     <a href="https://forms.gle/hMU2yfaXPy9u9cC39" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-blue-500 hover:bg-blue-600"
+                        class="link-button bg-neo-secondary flex items-center justify-center space-x-2"
                         aria-label="Submit informasi rekening atau e-wallet">
-                        💰 Submit Rekening / e-Wallet
+                        <i data-lucide="wallet" class="w-5 h-5" stroke-width="3"></i>
+                        <span>Submit Rekening / e-Wallet</span>
                     </a>
                 </div>
             </section>
 
             <!-- Files Section -->
             <section>
-                <h2 class="section-title">📁 Files</h2>
-                <div class="space-y-3">
+                <div class="flex items-center space-x-2 section-title">
+                    <i data-lucide="folder-closed" class="w-5 h-5" stroke-width="3"></i>
+                    <h2 class="text-lg">Files</h2>
+                </div>
+                <div class="space-y-4">
                     <a href="https://drive.google.com/drive/folders/1_EJ4f3RjWNPELs-63bD7fZBKZNWIiITg?usp=sharing"
-                        target="_blank" rel="noopener noreferrer" class="link-button bg-orange-400 hover:bg-orange-500"
+                        target="_blank" rel="noopener noreferrer"
+                        class="link-button bg-neo-accent flex items-center justify-center space-x-2"
                         aria-label="Download jurnal mengajar">
-                        📝 Unduh Jurnal Mengajar
+                        <i data-lucide="file-pen-line" class="w-5 h-5" stroke-width="3"></i>
+                        <span>Unduh Jurnal Mengajar</span>
                     </a>
                 </div>
             </section>
 
             <!-- Career Section -->
             <section>
-                <h2 class="section-title">💼 Tambahkan Kami di CV Kamu</h2>
-                <div class="space-y-3">
+                <div class="flex items-center space-x-2 section-title">
+                    <i data-lucide="briefcase" class="w-5 h-5" stroke-width="3"></i>
+                    <h2 class="text-lg">Karir</h2>
+                </div>
+                <div class="space-y-4">
                     <a href="https://id.linkedin.com/company/bimbel-sigmath" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-teal-500 hover:bg-teal-600 flex items-center justify-center space-x-2"
+                        class="link-button bg-neo-success flex items-center justify-center space-x-2"
                         aria-label="Kunjungi LinkedIn Bimbel Sigmath">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"
-                            aria-hidden="true">
-                            <path fill="#0288D1"
-                                d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z">
-                            </path>
-                            <path fill="#FFF"
-                                d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z">
-                            </path>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-linkedin">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect width="4" height="12" x="2" y="9" />
+                            <circle cx="4" cy="4" r="2" />
                         </svg>
-                        <span>LinkedIn</span>
+                        <span>LinkedIn Sigmath</span>
                     </a>
                 </div>
             </section>
 
             <!-- Reference Section -->
             <section>
-                <h2 class="section-title">📚 Referensi</h2>
-                <div class="space-y-3">
+                <div class="flex items-center space-x-2 section-title">
+                    <i data-lucide="library" class="w-5 h-5" stroke-width="3"></i>
+                    <h2 class="text-lg">Referensi</h2>
+                </div>
+                <div class="space-y-4">
                     <a href="https://sigmath.net/wp-content/uploads/2022/11/les-matematika-purwokerto.webp"
                         target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-white text-blue-600 hover:text-black"
+                        class="link-button bg-white flex items-center justify-center space-x-2"
                         aria-label="Lihat contoh bukti mengajar">
-                        🏞️ Contoh Bukti Mengajar
+                        <i data-lucide="image" class="w-5 h-5" stroke-width="3"></i>
+                        <span>Contoh Bukti Mengajar</span>
                     </a>
                     <a href="https://buku.kemendikdasmen.go.id/" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-white text-blue-600 hover:text-black"
+                        class="link-button bg-white flex items-center justify-center space-x-2"
                         aria-label="Akses situs buku Kemendikbud">
-                        📚 Situs Buku Kemdikbud
+                        <i data-lucide="book-type" class="w-5 h-5" stroke-width="3"></i>
+                        <span>Situs Buku Kemdikbud</span>
                     </a>
                 </div>
             </section>
         </nav>
 
         <!-- Footer -->
-        <footer class="text-center mt-8 py-4 border-t border-gray-700 text-sm text-gray-400" role="contentinfo">
-            <p>📍 Purwokerto, Banyumas, Jawa Tengah</p>
-            <p class="mt-2 text-xs">© 2024 Bimbel Sigmath. All rights reserved.</p>
+        <footer class="text-center mt-4 py-6 border-t-4 border-black bg-neo-warning -mx-2 mb-[-8px]" role="contentinfo">
+            <div class="flex items-center justify-center space-x-2 mb-1">
+                <i data-lucide="map-pin" class="w-4 h-4" stroke-width="3"></i>
+                <p class="font-bold text-sm">Purwokerto, Banyumas, Jawa Tengah</p>
+            </div>
+            <p class="text-xs font-medium">© 2024 Bimbel Sigmath. All rights reserved.</p>
         </footer>
     </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
