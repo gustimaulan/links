@@ -36,7 +36,7 @@
     <link rel="dns-prefetch" href="//id.linkedin.com">
 
     <title>Sigmath Links - Bimbel Matematika Purwokerto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -44,20 +44,14 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        lexend: ['Lexend', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'neo-bg': '#FFFBF5',
-                        'neo-primary': '#B4D4FF',
-                        'neo-secondary': '#FFD0D0',
-                        'neo-accent': '#E5CFF7',
-                        'neo-success': '#C1E1C1',
-                        'neo-warning': '#FFE4CF',
-                    },
-                    boxShadow: {
-                        'neo': '4px 4px 0px 0px #000000',
-                        'neo-lg': '8px 8px 0px 0px #000000',
-                        'neo-active': '2px 2px 0px 0px #000000',
+                        'notion-bg': '#FFFFFF',
+                        'notion-text': '#37352F',
+                        'notion-hover': 'rgba(55, 53, 47, 0.08)',
+                        'notion-border': 'rgba(55, 53, 47, 0.16)',
+                        'notion-gray': '#979A9B',
                     }
                 }
             }
@@ -66,184 +60,229 @@
 
     <style>
         body {
-            font-family: 'Lexend', sans-serif;
+            font-family: 'Inter', sans-serif;
+            color: #37352F;
         }
 
-        .neo-card {
-            border: 3px solid #000000;
-            box-shadow: 8px 8px 0px 0px #000000;
-            background-color: white;
-            transition: all 0.2s;
-        }
-
-        .link-button {
-            display: block;
-            padding: 0.85rem 1rem;
-            color: black;
-            border: 2px solid #000000;
-            border-radius: 0;
-            box-shadow: 4px 4px 0px 0px #000000;
-            transition: all 0.1s;
-            text-align: center;
-            font-weight: 600;
+        .notion-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(55, 53, 47, 0.12);
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            transition: all 0.1s ease-in;
             text-decoration: none;
-            position: relative;
+            color: inherit;
         }
 
-        .link-button:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px 0px #000000;
+        .notion-item:hover {
+            background-color: rgba(55, 53, 47, 0.04);
+            border-color: rgba(55, 53, 47, 0.2);
+            transform: translateY(-1px);
         }
 
-        .link-button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px #000000;
+        .notion-item.blue {
+            background-color: rgba(0, 120, 223, 0.05);
+            color: #0078df;
+            border-color: rgba(0, 120, 223, 0.1);
         }
 
-        .section-title {
-            color: #000000;
-            border-bottom: 3px solid #000000;
-            padding-bottom: 0.25rem;
-            font-weight: 800;
-            margin-bottom: 1.25rem;
-            display: inline-block;
+        .notion-item.blue:hover {
+            background-color: rgba(0, 120, 223, 0.1);
+        }
+
+        .notion-item.blue i {
+            color: #0078df;
+        }
+
+        .notion-item.yellow {
+            background-color: rgba(223, 171, 1, 0.05);
+            color: #dfab01;
+            border-color: rgba(223, 171, 1, 0.1);
+        }
+
+        .notion-item.yellow:hover {
+            background-color: rgba(223, 171, 1, 0.1);
+        }
+
+        .notion-item.yellow i {
+            color: #dfab01;
+        }
+
+        .notion-item.green {
+            background-color: rgba(0, 135, 107, 0.05);
+            color: #00876b;
+            border-color: rgba(0, 135, 107, 0.1);
+        }
+
+        .notion-item.green:hover {
+            background-color: rgba(0, 135, 107, 0.1);
+        }
+
+        .notion-item.green i {
+            color: #00876b;
+        }
+
+        .notion-item.purple {
+            background-color: rgba(103, 37, 210, 0.05);
+            color: #6725d2;
+            border-color: rgba(103, 37, 210, 0.1);
+        }
+
+        .notion-item.purple:hover {
+            background-color: rgba(103, 37, 210, 0.1);
+        }
+
+        .notion-item.purple i {
+            color: #6725d2;
+        }
+
+        .notion-item.gray {
+            background-color: rgba(55, 53, 47, 0.05);
+            color: #37352f;
+            border-color: rgba(55, 53, 47, 0.1);
+        }
+
+        .notion-item.gray:hover {
+            background-color: rgba(55, 53, 47, 0.1);
+        }
+
+        .notion-item.gray i {
+            color: #37352f;
+        }
+
+        .notion-section-header {
+            font-size: 11px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.025em;
+            letter-spacing: 0.05em;
+            color: rgba(55, 53, 47, 0.5);
+            margin-top: 24px;
+            margin-bottom: 8px;
+            padding-left: 12px;
         }
 
         img {
             image-rendering: auto;
-            image-rendering: crisp-edges;
-            image-rendering: -webkit-optimize-contrast;
         }
     </style>
 </head>
 
-<body class="bg-neo-bg flex items-center justify-center min-h-screen p-4 font-lexend">
-    <main class="w-full max-w-sm neo-card p-2">
+<body class="bg-notion-bg text-notion-text flex flex-col items-center min-h-screen font-inter">
+    <!-- Alert Bar -->
+    <div
+        class="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-notion-border py-3 px-4 flex justify-center mb-8">
+        <div
+            class="w-full max-w-xl bg-amber-50 border border-amber-200/50 rounded-lg p-3 flex items-center justify-between text-sm text-amber-900 shadow-sm">
+            <div class="flex items-center space-x-3">
+                <div class="bg-amber-100 p-1.5 rounded-md">
+                    <i data-lucide="megaphone" class="w-4 h-4 text-amber-600"></i>
+                </div>
+                <p class="font-medium">Buku Kompeten TKA 2026 SD MI</p>
+            </div>
+            <a href="https://s.shopee.co.id/4Au39oAS4k" target="_blank" rel="noopener noreferrer"
+                class="ml-4 px-3 py-1.5 bg-amber-600 text-white rounded-md font-semibold hover:bg-amber-700 transition-colors whitespace-nowrap">
+                Learn More >>
+            </a>
+        </div>
+    </div>
+
+    <main class="w-full max-w-xl px-4">
         <!-- Profile Header -->
-        <header class="flex flex-col items-center text-center space-y-4 my-10" role="banner">
+        <header class="flex flex-col items-center text-center space-y-4 my-16" role="banner">
             <div class="relative">
                 <img src="https://sigmath.net/wp-content/uploads/2022/11/sigmath-favicon.png" alt="Logo Bimbel Sigmath"
-                    class="w-24 h-24 border-4 border-black" loading="eager" width="96" height="96">
+                    class="w-20 h-20 rounded-xl" loading="eager" width="80" height="80">
             </div>
             <div class="flex flex-col items-center">
-                <h1 class="text-2xl font-extrabold text-black">Bimbel Sigmath</h1>
-                <p class="text-sm font-medium text-gray-700 bg-neo-warning px-3 py-1 border-2 border-black mt-2">
-                    @bimbel.sigmath</p>
+                <h1 class="text-3xl font-bold">Bimbel Sigmath</h1>
+                <p class="text-sm text-notion-gray mt-2">@bimbel.sigmath</p>
             </div>
         </header>
 
         <!-- Navigation Links -->
-        <nav class="flex flex-col space-y-8 px-4 mb-10" role="navigation" aria-label="Menu utama">
+        <nav class="flex flex-col space-y-2 mb-16" role="navigation" aria-label="Menu utama">
             <!-- Presensi Section -->
             <section>
-                <div class="flex items-center space-x-2 section-title">
-                    <i data-lucide="clipboard-check" class="w-5 h-5" stroke-width="3"></i>
-                    <h2 class="text-lg">Presensi</h2>
-                </div>
-                <div class="space-y-4">
+                <div class="notion-section-header">Presensi</div>
+                <div class="space-y-1">
                     <a href="https://forms.gle/5gDYnEaES4Ytr6J46" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-neo-primary flex items-center justify-center space-x-2"
-                        aria-label="Submit presensi kehadiran">
-                        <i data-lucide="log-in" class="w-5 h-5" stroke-width="3"></i>
-                        <span>Submit Presensi</span>
+                        class="notion-item blue" aria-label="Submit presensi kehadiran">
+                        <i data-lucide="log-in" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">Submit Presensi</span>
                     </a>
                     <a href="https://all-time.sigmath.net" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-neo-primary flex items-center justify-center space-x-2"
-                        aria-label="Lihat rekap presensi semua waktu">
-                        <i data-lucide="bar-chart-3" class="w-5 h-5" stroke-width="3"></i>
-                        <span>Rekap Presensi All Time</span>
+                        class="notion-item blue" aria-label="Lihat rekap presensi semua waktu">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">Rekap Presensi All Time</span>
                     </a>
                 </div>
             </section>
 
             <!-- Fee Section -->
             <section>
-                <div class="flex items-center space-x-2 section-title">
-                    <i data-lucide="banknote" class="w-5 h-5" stroke-width="3"></i>
-                    <h2 class="text-lg">Fee</h2>
-                </div>
-                <div class="space-y-4">
+                <div class="notion-section-header">Fee</div>
+                <div class="space-y-1">
                     <a href="https://forms.gle/hMU2yfaXPy9u9cC39" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-neo-secondary flex items-center justify-center space-x-2"
-                        aria-label="Submit informasi rekening atau e-wallet">
-                        <i data-lucide="wallet" class="w-5 h-5" stroke-width="3"></i>
-                        <span>Submit Rekening / e-Wallet</span>
+                        class="notion-item yellow" aria-label="Submit informasi rekening atau e-wallet">
+                        <i data-lucide="wallet" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">Submit Rekening</span>
                     </a>
                 </div>
             </section>
 
             <!-- Files Section -->
             <section>
-                <div class="flex items-center space-x-2 section-title">
-                    <i data-lucide="folder-closed" class="w-5 h-5" stroke-width="3"></i>
-                    <h2 class="text-lg">Files</h2>
-                </div>
-                <div class="space-y-4">
+                <div class="notion-section-header">Files</div>
+                <div class="space-y-1">
                     <a href="https://drive.google.com/drive/folders/1_EJ4f3RjWNPELs-63bD7fZBKZNWIiITg?usp=sharing"
-                        target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-neo-accent flex items-center justify-center space-x-2"
+                        target="_blank" rel="noopener noreferrer" class="notion-item purple"
                         aria-label="Download jurnal mengajar">
-                        <i data-lucide="file-pen-line" class="w-5 h-5" stroke-width="3"></i>
-                        <span>Unduh Jurnal Mengajar</span>
+                        <i data-lucide="file-pen-line" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">Unduh Jurnal Mengajar</span>
                     </a>
                 </div>
             </section>
 
             <!-- Career Section -->
             <section>
-                <div class="flex items-center space-x-2 section-title">
-                    <i data-lucide="briefcase" class="w-5 h-5" stroke-width="3"></i>
-                    <h2 class="text-lg">Karir</h2>
-                </div>
-                <div class="space-y-4">
+                <div class="notion-section-header">Karir</div>
+                <div class="space-y-1">
                     <a href="https://id.linkedin.com/company/bimbel-sigmath" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-neo-success flex items-center justify-center space-x-2"
-                        aria-label="Kunjungi LinkedIn Bimbel Sigmath">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                            class="lucide lucide-linkedin">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                            <rect width="4" height="12" x="2" y="9" />
-                            <circle cx="4" cy="4" r="2" />
-                        </svg>
-                        <span>LinkedIn Sigmath</span>
+                        class="notion-item green" aria-label="Kunjungi LinkedIn Bimbel Sigmath">
+                        <i data-lucide="linkedin" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">LinkedIn Sigmath</span>
                     </a>
                 </div>
             </section>
 
             <!-- Reference Section -->
             <section>
-                <div class="flex items-center space-x-2 section-title">
-                    <i data-lucide="library" class="w-5 h-5" stroke-width="3"></i>
-                    <h2 class="text-lg">Referensi</h2>
-                </div>
-                <div class="space-y-4">
-                    <a href="https://sigmath.net/wp-content/uploads/2022/11/les-matematika-purwokerto.webp"
-                        target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-white flex items-center justify-center space-x-2"
-                        aria-label="Lihat contoh bukti mengajar">
-                        <i data-lucide="image" class="w-5 h-5" stroke-width="3"></i>
-                        <span>Contoh Bukti Mengajar</span>
+                <div class="notion-section-header">Referensi</div>
+                <div class="space-y-1">
+                    <a href="https://sigmath.net/wp-content/uploads/2025/09/les-privat-pekuncen.avif" target="_blank"
+                        rel="noopener noreferrer" class="notion-item gray" aria-label="Lihat contoh bukti mengajar">
+                        <i data-lucide="image" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">Contoh Bukti Mengajar</span>
                     </a>
                     <a href="https://buku.kemendikdasmen.go.id/" target="_blank" rel="noopener noreferrer"
-                        class="link-button bg-white flex items-center justify-center space-x-2"
-                        aria-label="Akses situs buku Kemendikbud">
-                        <i data-lucide="book-type" class="w-5 h-5" stroke-width="3"></i>
-                        <span>Situs Buku Kemdikbud</span>
+                        class="notion-item gray" aria-label="Akses situs buku Kemendikbud">
+                        <i data-lucide="book-type" class="w-5 h-5 mr-3" stroke-width="2"></i>
+                        <span class="font-medium">Situs Buku Kemdikbud</span>
                     </a>
                 </div>
             </section>
         </nav>
 
         <!-- Footer -->
-        <footer class="text-center mt-4 py-6 border-t-4 border-black bg-neo-warning -mx-2 mb-[-8px]" role="contentinfo">
-            <div class="flex items-center justify-center space-x-2 mb-1">
-                <i data-lucide="map-pin" class="w-4 h-4" stroke-width="3"></i>
-                <p class="font-bold text-sm">Purwokerto, Banyumas, Jawa Tengah</p>
+        <footer class="text-center py-12 border-t border-notion-border mt-8" role="contentinfo">
+            <div class="flex items-center justify-center space-x-2 mb-2 text-notion-gray">
+                <i data-lucide="map-pin" class="w-4 h-4" stroke-width="2"></i>
+                <p class="text-sm">Purwokerto, Banyumas, Jawa Tengah</p>
             </div>
-            <p class="text-xs font-medium">© 2024 Bimbel Sigmath. All rights reserved.</p>
+            <p class="text-xs text-notion-gray/60">© 2024 Bimbel Sigmath. All rights reserved.</p>
         </footer>
     </main>
 
